@@ -49,4 +49,9 @@ public class UserRepository {
         entityManager.persist(user);
         return user;
     }
+
+    @Transactional
+    public void deleteAll() {
+        entityManager.createNativeQuery("DELETE FROM users").executeUpdate();
+    }
 }
