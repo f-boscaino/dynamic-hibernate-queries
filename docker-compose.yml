@@ -1,0 +1,12 @@
+services:
+  dynamic-queries:
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    environment:
+      - JDBC_CONNECTION_STRING=jdbc:h2:mem
+      - DATABASE_NAME=userdb
+      - DATABASE_USERNAME=sa
+      - DATABASE_PASSWORD=password
+      - DATABASE_DRIVER=org.h2.Driver
