@@ -22,10 +22,10 @@ public class UserController {
 
     @GetMapping("/user")
     public List<User> getUsers(
-            @PathVariable(required = false) String username,
-            @PathVariable(required = false) String email,
-            @PathVariable(required = false) String firstName,
-            @PathVariable(required = false) String lastName
+            @RequestParam(required = false) String username,
+            @RequestParam(required = false) String email,
+            @RequestParam(required = false) String firstName,
+            @RequestParam(required = false) String lastName
     ) {
         return userService.getUsers(username, email, firstName, lastName);
     }
